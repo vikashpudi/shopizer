@@ -38,5 +38,5 @@ stages {
         }
 		}
  }
- post
+ post{ }
   }
