@@ -1,9 +1,10 @@
 pipeline { 
 agent{label'JDK-ALL-MAVEN'}
+triggers { pollSCM('30 17 * * 1-5') }
 stages {
 	stage('git cloneing') {
 		steps {
-		git url: 'https://github.com/shopizer-ecommerce/shopizer' , branch: 'master'
+		git url: 'https://github.com/shopizer-ecommerce/shopizer' , branch: 'rel'
 		 
 		}
 	    }
@@ -37,4 +38,5 @@ stages {
         }
 		}
  }
+ post
   }

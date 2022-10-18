@@ -1,0 +1,41 @@
+pipeline { 
+agent{label'JDK-ALL-MAVEN'}
+triggers { pollSCM('H */4 * * 1-5') }
+stages {
+	stage('git cloneing') {
+		steps {
+		git url: 'https://github.com/shopizer-ecommerce/shopizer' , branch: 'master'
+		 
+		}
+	    }
+	stage ('Artifactory configuration') {
+        steps {
+				rtMavenDeployer ( 
+                id: "maven-depolyer",
+				//
+                serverId: "JFINSTANCE",
+                releaseRepo: 'mymavenrepo',
+                snapshotRepo: 'mymavenrepo'
+				)
+        }
+        }
+
+    stage ('Exec Maven') {
+            steps {
+                rtMavenRun (
+                    tool: 'MAVEN3.6.3' ,
+                    pom: 'pom.xml',
+                    goals: 'package'
+					
+                    )
+        }
+        }
+        stage ('Publish Build Info') {
+            steps {
+                rtPublishBuildInfo (
+                    serverId: "JFINSTANCE"
+                )
+        }
+		}
+ }
+  }
