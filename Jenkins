@@ -5,7 +5,7 @@ parameters { choice(name: 'BRANCH_SELECT', choices: ['master', 'devlop', 'rel'],
 stages {
 	stage('git cloneing') {
 		steps {
-		git url: 'https://github.com/vikashpudi/shopizer.git' , branch: "${params.PERSON}"'
+		git url: 'https://github.com/vikashpudi/shopizer.git' , branch: '${params.PERSON}'
 		 
 		}
 	    }
