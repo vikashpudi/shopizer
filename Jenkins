@@ -1,9 +1,10 @@
 pipeline { 
-agent{label 'ALL'}
+agent{label'ALL'}
+parameters { choice(name: 'BRANCH_SELECT', choices: ['master', 'devlop', 'rel'], description: select the branch '') }
 stages {
 	stage('git cloneing') {
 		steps {
-		git url: 'https://github.com/shopizer-ecommerce/shopizer' , branch: 'master'
+		git url: 'https://github.com/shopizer-ecommerce/shopizer' , branch: '${params.CHOICE}'
 		 
 		}
 	    }
