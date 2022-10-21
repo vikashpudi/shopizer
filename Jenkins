@@ -1,10 +1,11 @@
 pipeline { 
 agent{label 'ALL'}
+string(name: 'PERSON', defaultValue: 'master', description: 'Who should I say hello to?')
 parameters { choice(name: 'BRANCH_SELECT', choices: ['master', 'devlop', 'rel'], description:  'select the branch ') }
 stages {
 	stage('git cloneing') {
 		steps {
-		git url: 'https://github.com/vikashpudi/shopizer.git' , branch: 'master'
+		git url: 'https://github.com/vikashpudi/shopizer.git' , branch: '${params.PERSON}"'
 		 
 		}
 	    }
