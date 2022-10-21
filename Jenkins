@@ -1,7 +1,7 @@
 pipeline { 
 agent{label 'ALL'}
 
-parameters { choice(name: 'BRANCH_SELECT', choices: ['master', 'devlop', 'rel'], description:  'select the branch ')
+parameters { choice(name: 'BRANCH_SELECT', choices: ['package', 'install' ], description:  'select the branch ')
              string(name: 'BRANCH', defaultValue: 'master', description: 'Who should I say hello to?') }
 stages {
 	stage('git cloneing') {
@@ -27,7 +27,7 @@ stages {
                 rtMavenRun (
                     tool: 'MAVEN3.6.3' ,
                     pom: 'pom.xml',
-                    goals: 'package'
+                    goals: '${params.BRANCH_SELECT}'
 					
                     )
         }
