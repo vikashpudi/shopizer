@@ -1,5 +1,5 @@
 pipeline { 
-agent{label 'ALL'}
+agent{label'ALL'}
 parameters { choice(name: 'BRANCH_SELECT', choices: ['master', 'devlop', 'rel'], description: select the branch '') }
 stages {
 	stage('git cloneing') {
