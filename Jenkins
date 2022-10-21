@@ -37,5 +37,12 @@ stages {
                 )
         }
 		}
+        stage ('this is second node') {
+            agent{label 'b1s'}
+            steps {
+                 sh 'echo "this from secondnode"'
+                )
+        }
+		}
  }
   }
