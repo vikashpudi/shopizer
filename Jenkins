@@ -38,7 +38,7 @@ stages {
         }
 		}
         stage ('this is second node') {
-            agent{label 'b1s'}
+            agent{label 'bs1'}
             steps {
                  sh 'echo "this from secondnode"'
                  
