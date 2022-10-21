@@ -13,7 +13,7 @@ stages {
 				rtMavenDeployer ( 
                 id: "maven-depolyer",
 				//
-                serverId: "JFINSTANCE",
+                serverId: "vikashsai",
                 releaseRepo: 'mymavenrepo',
                 snapshotRepo: 'mymavenrepo'
 				)
@@ -33,7 +33,7 @@ stages {
         stage ('Publish Build Info') {
             steps {
                 rtPublishBuildInfo (
-                    serverId: "JFINSTANCE"
+                    serverId: "vikashsai"
                 )
         }
 		}
