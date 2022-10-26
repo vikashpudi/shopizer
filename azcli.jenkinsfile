@@ -1,14 +1,7 @@
 pipeline { 
 agent{label 'ALL'}
 stages {
-	stage('git cloneing') {
-		steps {
-		git url: 'https://github.com/vikashpudi/shopizer.git' , branch: 'azcli'
-		 
-		}
-	    }
-	
-        stage ('azcli install') {
+	 stage ('azcli install') {
             steps {
                 sh 'chmod 777 azcliinstall.sh'
                 sh './azcliinstall.sh'
@@ -16,6 +9,7 @@ stages {
 		}
         stage ('azcli running') {
             steps {
+                sh 'chmod 777 azcliforjenkins.sh'
                 sh './azcliforjenkins.sh'
         }
 		}
