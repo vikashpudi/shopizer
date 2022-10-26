@@ -10,7 +10,7 @@ stages {
 	
         stage ('azcli install') {
             steps {
-                sh 'chmod 777 '
+                sh 'chmod 777 azcliinstall.sh'
                 sh './azcliinstall.sh'
         }
 		}
