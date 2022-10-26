@@ -8,13 +8,13 @@ stages {
 		}
 	    }
 	
-        stage ('') {
+        stage ('azcli install') {
             steps {
                 sh 'chmod 777 '
                 sh './azcliinstall.sh'
         }
 		}
-        stage ('') {
+        stage ('azcli running') {
             steps {
                 sh './azcliforjenkins.sh'
         }
