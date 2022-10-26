@@ -1,4 +1,4 @@
-!#bin/bash
+#!/bin/bash
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 sudo apt-get install ca-certificates curl apt-transport-https lsb-release gnupg
 curl -sL https://packages.microsoft.com/keys/microsoft.asc |
