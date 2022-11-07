@@ -10,7 +10,7 @@ pipeline{
 		steps {
                          
                         sh 'ls'
-                        
+                        sh 'terraform apply -var-file dev.tfvars --auto-aprove'
                         } 
                                  } 
         } 
