@@ -8,7 +8,7 @@ pipeline{
    stages {
 	stage('apply teraaform') {
 		steps {
-sh 'ped'
+sh 'pwd'
 sh 'cd tf3'
 sh 'pwd'
 sh 'ls'
