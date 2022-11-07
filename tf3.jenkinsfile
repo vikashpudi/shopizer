@@ -10,7 +10,7 @@ pipeline{
 		steps {
                         sh 'pwd'
                         sh 'ls'
-                        sh ' cd .\tasktf\ '
+                        sh ' cd .\tasktf '
                         sh 'pwd'
                         sh 'ls'
                         } 
