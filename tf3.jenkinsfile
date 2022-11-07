@@ -1,0 +1,16 @@
+pipeline{ 
+  agent{label 'ALL'}  
+  parameters { string(name: 'client_id', defaultValue: '', description: 'Who should I say hello to?')
+  string(name: 'app_id', defaultValue: '', description: 'Who should I say hello to?')
+  string(name: 'client_secret', defaultValue: '', description: 'Who should I say hello to?')
+   }
+
+   stages {
+	stage('apply teraaform') {
+		steps {
+sh 'pwd'
+sh 'ls'
+        } 
+        } 
+        } 
+}

@@ -1,0 +1,2 @@
+az network nsg create --name webnsg --resource-group jenkinsfromcli --location eastus 
+az network nsg rule create --name allowall --nsg-name webnsg --priority 409 --resource-group jenkinsfromcli --access Allow --direction Inbound --protocol Tcp --source-port-ranges *
