@@ -8,7 +8,7 @@ pipeline{
    stages {
 	stage('apply teraaform') {
 		steps {
-                        sh '/home/Murali/home/Murali/RemoteNode/home/Murali/RemoteNode/workspace/tf3/tasktf' 
+ 
                         sh 'ls'
                         sh 'terraform init'
                         sh 'terraform apply -var-file dev.tfvars -auto-approve'
